@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="./stylus/main.styl")
+        script(type="module" src="./js/main.js") 
+    body
+        .programs
+            h2.center Adult Programs
+            p.programs__sub Registration for events is required. To sign up, please visit the Library or call us at (908) 725-0413 during our open hours.
+            .programs__content
+        .picks
+            h2.center Staff Picks
+            include ./includes/picks.pug

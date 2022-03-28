@@ -1,0 +1,188 @@
+//// MAGIC ////////////////////////////////////////////////////////////////////
+month = 0
+:root
+    --m month
+//// RESET ////////////////////////////////////////////////////////////////////
+*
+    margin 0
+    padding 0
+    box-sizing border-box
+//// FUNCTIONS ////////////////////////////////////////////////////////////////
+load-font(name, file, w=normal, st=normal)
+    @font-face
+        font-family name
+        font-style st
+        font-weight w
+        src url("../fonts/" + file + ".woff2")
+        font-display swap
+//// LOAD FONTS ///////////////////////////////////////////////////////////////
+load-font("Minion Pro", "minion-pro")
+load-font("Minion Pro", "minion-pro_bold", bold)
+load-font("Perpetua", "perpetua")
+load-font("Perpetua", "perpetua_bold", bold)
+load-font("Perpetua", "perpetua_italic",, italic)
+load-font("Perpetua", "perpetua_bold-italic", bold, italic)
+//// FONT FUNCTIONS ///////////////////////////////////////////////////////////
+minion(sz, c=black, w=normal)
+    font sz "Minion Pro", serif
+    color c
+    font-weight w
+    line-height sz
+perpetua(sz, c=black, w=normal, st=normal, h=1.1)
+    font sz "Perpetua", serif
+    color c
+    font-weight w
+    font-style st
+    line-height sz*h
+//// COLOR ////////////////////////////////////////////////////////////////////
+main-text   = #000000
+palette     = #0093f9 #f900c6 #248d00 #8a45cc #49ae16 #e48d00 \
+              #ff3030 #ff3030 #e48d00 #dc4b00 #e48d00 #248d00
+theme       = palette[month]
+//// MAIN /////////////////////////////////////////////////////////////////////
+html
+    scroll-behavior smooth
+    scrollbar-width none
+    -ms-overflow-style none
+    &::-webkit-scrollbar
+        display none
+h1
+    minion(57px, black, bold)
+    text-align center
+    margin-bottom -8px
+h2
+    minion(50px, theme, bold)
+h3
+    minion(40px, theme, bold)
+h4
+    minion(30px, theme, bold)
+    letter-spacing -1px
+h5
+    perpetua(26px, theme, bold, italic)
+    letter-spacing -1px
+p
+    perpetua(26px, main-text)
+b
+    perpetua(26px, main-text, bold)
+i
+    perpetua(28px, main-text,, italic)
+.center
+    text-align center
+.comment
+    perpetua(24px,  main-text,, italic)
+//// STRUCTURE ////////////////////////////////////////////////////////////////
+body
+    display flex
+    flex-flow column
+    justify-content space-evenly
+    margin 64px auto
+    max-width 1070px
+    min-width 1070px
+    height 1070px * (11/8.5)
+    border 4px solid theme
+.title
+    margin 0 auto
+.issue
+    display flex
+    flex-flow row
+    justify-content space-evenly
+    &__img
+        width 390px
+        height 245px
+        object-fit cover
+    &__hours
+        h3
+            margin-bottom 10px
+        display flex
+        flex-direction column
+        justify-content center
+.news
+    display flex
+    flex-flow column
+    h2
+        margin-bottom 24px
+    &__desc
+        text-align justify
+        text-align-last center
+        margin 0 90px
+.board
+    display flex
+    flex-flow column
+    h2
+        margin-bottom 24px
+    &__members
+        display flex
+        flex-flow row wrap
+        justify-content center
+        align-items center
+        gap 32px 32px
+        margin auto 180px
+        margin-bottom 24px
+    &__info
+        perpetua(24px, theme, bold, italic)
+        text-align center
+        margin 0 210px
+.divider
+    width 212px
+    margin 0 auto
+.day
+    display inline-block
+    width 180px
+.member
+    text-align center
+    width 200px
+.info
+    perpetua(24px,  rgba(main-text, 0.6), bold)
+    margin 0 auto
+.programs
+    margin 0 16px
+    &__sub
+        text-align center
+        perpetua(24px, main-text, bold, italic)
+        margin 0 200px 32px
+    &__content
+        display flex
+        flex-flow row wrap
+        justify-content space-evenly
+        gap 16px 36px
+.event
+    display flex
+    flex-flow row nowrap
+    justify-content center
+    align-items center
+    width 850px
+    &__img
+        width 160px
+        height 160px
+        margin-right 16px
+    &__date
+        perpetua(20px, rgba(main-text, 0.8), bold, italic)
+        line-height 20px
+        letter-spacing -0.4px
+    &__blurb
+        perpetua(23px, main-text)
+        text-align justify
+        letter-spacing -0.2px
+.picks
+    h2
+        margin-bottom 8px
+    &__header
+        text-align center
+        margin-bottom 8px
+    &__content
+        display flex
+        flex-flow row wrap
+        justify-content center
+        text-align center
+        gap 24px 64px
+    &__cds
+        margin-top -36px
+    &__dvds
+        display flex
+        flex-flow row wrap
+        justify-content center
+        text-align center
+        gap 0 50px
+.pick
+    margin-bottom 6px
+    width 450px

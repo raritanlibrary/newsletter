@@ -1,0 +1,22 @@
+{
+  "name": "newsletter",
+  "version": "1.0.0",
+  "description": "A newsletter generator for Raritan Public Library.",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "pug": "^3.0.2",
+    "puppeteer": "^13.5.1",
+    "stylus": "^0.57.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.4.0",
+    "@parcel/transformer-stylus": "^2.4.0",
+    "parcel": "^2.4.0"
+  },
+  "scripts": {
+    "clear": "rm -rf dist && rm -rf .parcel-cache",
+    "dev": "bash ./scripts/month.sh && parcel src/*.pug && bash ./scripts/month.sh reset",
+    "redev": "npm run clear && npm run dev",
+    "make": "node scripts/generate.js && bash ./scripts/combine.sh"
+  }
+}

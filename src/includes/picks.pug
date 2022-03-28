@@ -1,0 +1,35 @@
+//-- MIXINS --/////////////////////////////////////////////////////////////////
+mixin pick(title, author)
+    p.pick #[i #{title}], #{author}
+//-- HTML --///////////////////////////////////////////////////////////////////
+.picks__content
+    .picks__adult
+        h3.picks__header Adult
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+    .picks__child
+        h3.picks__header Children
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+    .picks__ya
+        h3.picks__header Young Adult
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+    .picks__cds
+        h3.picks__header CDs
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+        +pick("Title", "Author")
+.picks__bottom
+    h3.picks__header DVDs
+    .picks__dvds
+        i.pick Title
+        i.pick Title
+        i.pick Title
+        i.pick Title

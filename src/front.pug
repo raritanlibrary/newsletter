@@ -1,0 +1,50 @@
+//-- MAGIC --//////////////////////////////////////////////////////////////////
+- const month = 0
+//-- MIXINS --/////////////////////////////////////////////////////////////////
+mixin member(name, title)
+    .member
+        b #{name}
+        if title
+            p.comment #{title}
+//-- HTML --///////////////////////////////////////////////////////////////////
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="./stylus/main.styl")
+        script(type="module" src="./js/main.js") 
+    body
+        .title
+            h1 Raritan Public Library Newsletter
+            h4.month
+        .issue
+            img.issue__img(src=`./img/homestead/${month+1}.png`)
+            .issue__hours
+                h3.center Hours
+                p #[b.day Monday]      #[span 10 AM - 8 PM]
+                p #[b.day Tuesday]     #[span 10 AM - 8 PM]
+                p #[b.day Wednesday]   #[span 10 AM - 8 PM]
+                p #[b.day Thursday]    #[span 10 AM - 8 PM]
+                p #[b.day Friday]      #[span 10 AM - 8 PM]
+                p #[b.day Saturday]    #[span 10 AM - 3 PM]
+                p #[b.day Sunday]      #[span CLOSED]
+        .news
+            img.divider(src=`./img/divider/${month+1}.png`)
+            .news__content
+        .board
+            img.divider(src=`./img/divider/${month+1}.png`)
+            h2.center Library Board of Trustees
+            .board__members
+                +member("Donald Esposito", "President")
+                +member("Jane Fidacaro", "Vice-President")
+                +member("Laura Hnasko", "Secretary")
+                +member("Umesh Agrawal", "Treasurer")
+                +member("Adele Goetsch")
+                +member("Jim Foohey")
+                +member("Ann Marie Mead")
+                +member("Lucy Sandler", "Superintendent Alternate")
+                +member("Zachary Bray", "Mayor")
+                +member("Mary J. Paese", "Director")
+            .board__info Board of Trustees meetings are held on the third Thursday of each month at 7:00 PM at the Library. 
+        .info 54 East Somerset Street &nbsp;—&nbsp; (908) 725-0413 &nbsp;—&nbsp; raritanlibrary.org
