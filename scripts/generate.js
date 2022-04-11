@@ -16,7 +16,7 @@ const printPDF = async (which) => {
 
     await browser.close();
 
-    fs.writeFileSync(`./out/newsletter-${which}_${fdate}.pdf`, pdf);
+    fs.writeFileSync(`./out/newsletter_${which}_${fdate}.pdf`, pdf);
 }
 
 const main = async () => {

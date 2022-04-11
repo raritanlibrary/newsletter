@@ -159,7 +159,6 @@ let endTime;
 let eventOutput = ``;
 events.forEach(event => {
     let eventDate;
-    let eventTitle;
     endTime = event.noendtime ? `` : ` - ${formatTime(addHours(event.dateName, event.length))}`;
     if (event.date === 'tbd') {
         eventDate = `Date:&nbsp;TBD`
