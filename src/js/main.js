@@ -159,7 +159,7 @@ let endTime;
 let eventOutput = ``;
 events.forEach(event => {
     let eventDate;
-    endTime = event.noendtime ? `` : ` - ${formatTime(addHours(event.dateName, event.length))}`;
+    endTime = event.noendtime || event.appointment ? `` : ` - ${formatTime(addHours(event.dateName, event.length))}`;
     if (event.date === 'tbd') {
         eventDate = `Date:&nbsp;TBD`
     } else if (event.range) {
@@ -175,10 +175,12 @@ events.forEach(event => {
         }
     } else if (Array.isArray(event.date) && event.date.length === 1) {
         eventDate = `${fullDayTime(event.date[0])}${endTime}`;
+    } else if (event.appointment) {
+        eventDate = "By Appointment Only"
     } else {
         eventDate = `${fullDayTime(event.date)}${endTime}`;
     }
-    if (addHours(event.dateName, event.length) >= now) {
+    if (event.appointment || addHours(event.dateName, event.length) >= now) {
         eventOutput += `
         <div class="event">
             <img class="event__img" src="https://raritanlibrary.org/img/events/${event.img}.webp">
@@ -192,4 +194,4 @@ events.forEach(event => {
         `
     }
 });
-setClass(`programs__content`, eventOutput)
+setClass(`programs__content`, eventOutput);
