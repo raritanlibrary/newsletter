@@ -1,3 +1,5 @@
+**NOTE: As of May 2022, this repository is currently non-functional due to a backend change in the [www](https://github.com/raritanlibrary/www) repository. This repository may or may not be updated in the future to accommodate those changes.**
+
 # **Raritan Public Library Newsletter Generator**
 This **newsletter** generator provides a quick and easy solution to semi-automatiaclly creating monthly newsletters for Raritan Public Library.
 
@@ -46,7 +48,7 @@ npm run make
 This command generates the newsletter and saves the resulting .pdf file in the `out` directory.
 
 ## **Issues and Contributing**
-Pull requests are encouraged by the Raritan Public Library to ensure our software is of the highest quality possible. If you would like to suggest major changes or restructuring of this repository, please [open an issue](https://github.com/raritanlibrary/newsletter/issues/new). It is also strongly suggested you email us at [raritanlibrary54@aol.com](mailto:raritanlibrary54@aol.com).
+Pull requests are encouraged by the Raritan Public Library to ensure our software is of the highest quality possible. If you would like to suggest major changes or restructuring of this repository, please [open an issue](https://github.com/raritanlibrary/newsletter/issues/new). It is also strongly suggested you email us at [info@raritanlibray.org](mailto:info@raritanlibray.org) with any additional questions or concerns.
 
 ## **License**
 [MIT](LICENSE)
